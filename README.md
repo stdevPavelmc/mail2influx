@@ -1,5 +1,7 @@
 # Mail2Influx
 
+![](./example.png)
+
 A simple mail log data parser and influx data injector; crafted to match [MailAD](https://github.com/stdevPavelmc/mailad) logs in Ubuntu and Debian
 
 ## Motivation
