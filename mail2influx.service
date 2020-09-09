@@ -1,0 +1,13 @@
+[Unit]
+Description=Parse the mail.log file and scrap the data to push to influxdb 
+ 
+[Service]
+User=syslog
+Group=syslog
+WorkingDirectory=/tmp
+Restart=always
+RestartSec=5
+ExecStart=/usr/local/bin/mail2influx.py
+ 
+[Install]
+WantedBy=multi-user.target
