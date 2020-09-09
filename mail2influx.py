@@ -21,8 +21,8 @@ logfile="/var/log/mail.log"
 ### End onf the user configrations
 
 # triggers
-DEBUG=True
-DEVELOP=True
+DEBUG=False
+DEVELOP=False
 
 ### Just for dev purpose
 dev_host="10.0.3.9"
