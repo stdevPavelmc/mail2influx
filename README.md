@@ -21,7 +21,7 @@ You need to install python-influxdb support, search it on the repository or use 
     - `systemctl enable mail2influx`
     - `systemctl start mail2influx`
 5. Go to Grafana and create a new dashboard and import the data from the `influx-grafana_dashboard.json` file
-    - You may need to update the influxdb source in grafana to make int work
+    - The dashboard has a default datasource named **InfluxDB-mail**, you may need to update the influxdb source in grafana to make it work.
 
 ## Known issues
 
