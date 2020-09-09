@@ -19,7 +19,7 @@
   "links": [],
   "panels": [
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -95,7 +95,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -170,7 +170,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -244,7 +244,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -318,7 +318,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -393,7 +393,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -467,7 +467,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -541,7 +541,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -615,7 +615,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -689,7 +689,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -763,7 +763,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -837,7 +837,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -915,7 +915,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB",
+      "datasource": "InfluxDB-mail",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1090,7 +1090,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB",
+      "datasource": "InfluxDB-mail",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1327,7 +1327,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB",
+      "datasource": "InfluxDB-mail",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1638,7 +1638,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB",
+      "datasource": "InfluxDB-mail",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -2056,7 +2056,7 @@
       }
     },
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -2136,7 +2136,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": null,
+      "datasource": "InfluxDB-mail",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -2217,7 +2217,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "InfluxDB-mail",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -2300,7 +2300,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "InfluxDB-mail",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -2384,7 +2384,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "InfluxDB-mail",
       "description": "",
       "fieldConfig": {
         "defaults": {
