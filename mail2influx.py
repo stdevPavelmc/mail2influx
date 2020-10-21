@@ -21,8 +21,8 @@ logfile="/var/log/mail.log"
 ### End onf the user configrations
 
 # triggers
-DEBUG=False
-DEVELOP=False
+DEBUG=True
+DEVELOP=True
 
 ### Just for dev purpose
 dev_host="10.0.3.9"
@@ -150,6 +150,7 @@ def filter_postfix(line):
 		['postfix_nq_user_unknown',				"^.* postfix.*: NOQUEUE: reject: .* User unknown in virtual mailbox table.*$"],
 		['postfix_tls_error',					"^.* postfix.*: .* TLS library problem: .*$"],
 		['postfix_ssl_error',					"^.* postfix.*: .* SSL_accept error from.*$"],
+		['postfix_deferred_noroute', 			"^.* postfix.*: .* status=deferred .* No route to host)$"],
 	]
 
 	#### pure data messages
