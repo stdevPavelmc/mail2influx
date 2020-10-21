@@ -155,7 +155,7 @@ def filter_postfix(line):
 		['postfix_deferred_unverified_recipient',			"^.* postfix.*: .* status=deferred .* Recipient address rejected: unverified address: .*$"],
 		['postfix_deferred_over_quota',						"^.* postfix.*: .* status=deferred .* would exceed mailbox quota .*$"],
 		['postfix_deferred_domain_not_found',				"^.* postfix.*: .* status=deferred .*Host or domain name not found.*$"],
-
+		['postfix_deferred_timeout',						"^.* postfix.*: .* status=deferred .* Connection timed out.*$"],
 
 	]
 
