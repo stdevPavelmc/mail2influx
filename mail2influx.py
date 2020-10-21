@@ -156,7 +156,7 @@ def filter_postfix(line):
 		['postfix_deferred_over_quota',				"^.* postfix.*: .* status=deferred .*would exceed mailbox quota.*$"],
 		['postfix_deferred_domain_not_found',		"^.* postfix.*: .* status=deferred .*Host or domain name not found.*$"],
 		['postfix_deferred_timeout',				"^.* postfix.*: .* status=deferred .*Connection timed out.*$"],
-		['postfix_deferred_timeout_while_talking',	"^.* postfix.*: .* status=deferred .*conversation with .*timed out while sending .*$"],
+		['postfix_deferred_interrupted_while_talking',	"^.* postfix.*: .* status=deferred .* with .* while .*$"],
 		['postfix_deferred_connection_refused',		"^.* postfix.*: .* status=deferred .*Connection refused.*$"],
 		['postfix_deferred_greylisting',			"^.* postfix.*: .* status=deferred .*Greylisting enabled.*$"],
 		['postfix_deferred_too_many_recipients',	"^.* postfix.*: .* status=deferred .*Too many recipients received from the sender.*$"],
@@ -169,7 +169,8 @@ def filter_postfix(line):
 
 	#### pure data messages
 	for mea, regex in filter_by_tag:
-		postfix_filtering(line, mea, regex)
+		if postfix_filtering(line, mea, regex):
+			break
 
 	# timeouts
 	postfix_timeouts(line)
@@ -245,6 +246,11 @@ def postfix_filtering(line, mea, regex):
 			mea_add([mea, {**tags, **extracted}])
 		else:
 			mea_add([mea, tags])
+
+		return True
+
+	# return false as there is no match
+	return False
 
 def postfix_timeouts(line):
 	# timeout messages {AUTH, CONNECT, DATA, END-OF-MESSAGE, STARTTLS}
