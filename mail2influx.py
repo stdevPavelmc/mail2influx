@@ -161,6 +161,8 @@ def filter_postfix(line):
 			"^.* postfix.*: NOQUEUE: reject: .* Server configuration error.*$"],
 		['postfix_nq_user_unknown',
 			"^.* postfix.*: NOQUEUE: reject: .* User unknown in virtual mailbox table.*$"],
+        ['postfix_nq_DNSBL',
+            "^.* postfix.*: NOQUEUE: reject: .* Service unavailable; client .* blocked using .*$"],
 		['postfix_tls_error',
 			"^.* postfix.*: .* TLS library problem: .*$"],
 		['postfix_ssl_error',
