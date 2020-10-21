@@ -207,8 +207,8 @@ def filter_postfix(line):
 			"^.* postfix.*: .* status=deferred .* Network is unreachable.*$"],
 		['postfix_deferred_relay_denied',
 			"^.* postfix.*: .* status=deferred .*Relay access denied.*$"],
-		['postfix_virus',
-			"^.* virus detected\: .*clamav.*$"],
+		['pmg_virus',
+			"^.* pmg-smtp-filter.* virus detected.*clamav.*$"],
 	]
 
 	#### pure data messages
@@ -294,7 +294,7 @@ def postfix_filtering(line, mea, regex):
 			dnsbl = re.findall("blocked using .*;", data)
 			tags['dnsbl'] = dnsbl[0].split(" ")[2].split(';')[0]
 
-		if mea == "postfix_virus":
+		if mea == "pmg_virus":
 			# get the virus name
 			tag["virus"] = data.split(" ")[-2]
 

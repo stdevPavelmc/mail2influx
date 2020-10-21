@@ -25,8 +25,9 @@ And no, you don't need to create the influxdb database in advance, mail2influx t
     - `systemctl daemon-reload`
     - `systemctl enable mail2influx`
     - `systemctl start mail2influx`
-6. Go to Grafana and create a new dashboard and import the data from the `influx-grafana_dashboard.json` file
-    - The dashboard has a default datasource named **InfluxDB-mail**, you may need to update the influxdb source in grafana to make it work.
+6. Go to Grafana and create a new dashboard and import the data from one of the files in this repository:
+    - The `influx-grafana_dashboard.json` file is tailored to a postfix + dovecot server, and it has a default datasource named **InfluxDB-mail**, you may need to update the influxdb source in grafana to make it work.
+    - The `influx-grafana_dashboard-PMG.json` file is tailored for a Proxmox Mail Gateway, and it has a default datasource named **InfluxDB-mailgw**, you may need to update the influxdb source in grafana to make it work.
 
 ## Known issues
 
