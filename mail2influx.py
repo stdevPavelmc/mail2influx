@@ -154,16 +154,18 @@ def filter_postfix(line):
 		['postfix_deferred_service_not_available',	"^.* postfix.*: .* status=deferred .*Recipient address rejected.* Service is unavailable .*$"],
 		['postfix_deferred_unverified_recipient',	"^.* postfix.*: .* status=deferred .*Recipient address rejected.* unverified address: .*$"],
 		['postfix_deferred_over_quota',				"^.* postfix.*: .* status=deferred .*would exceed mailbox quota.*$"],
+		['postfix_deferred_over_quota',				"^.* postfix.*: .* status=deferred .*Quota exceeded.*$"],
 		['postfix_deferred_domain_not_found',		"^.* postfix.*: .* status=deferred .*Host or domain name not found.*$"],
-		['postfix_deferred_timeout',				"^.* postfix.*: .* status=deferred .*Connection timed out.*$"],
+		['postfix_deferred_connection_timeout',		"^.* postfix.*: .* status=deferred .*Connection timed out.*$"],
+		['postfix_deferred_timeout_exceeded',		"^.* postfix.*: .* status=deferred .*Error: timeout exceeded.*$"],
 		['postfix_deferred_interrupted_while_talking',	"^.* postfix.*: .* status=deferred .* with .* while .*$"],
 		['postfix_deferred_connection_refused',		"^.* postfix.*: .* status=deferred .*Connection refused.*$"],
-		['postfix_deferred_greylisting',			"^.* postfix.*: .* status=deferred .*Greylisting enabled.*$"],
+		['postfix_deferred_greylisting',			"^.* postfix.*: .* status=deferred .*Greylist.*$"],
 		['postfix_deferred_too_many_recipients',	"^.* postfix.*: .* status=deferred .*Too many recipients received from the sender.*$"],
 		['postfix_deferred_server_error',	"^.* postfix.*: .* status=deferred .*Client host rejected.* Server configuration error.*$"],
 		['postfix_deferred_TLS_error',		"^.* postfix.*: .* status=deferred .*Cannot start TLS.*$"],
 		['postfix_deferred_no_route_to_host',		"^.* postfix.*: .* status=deferred .*No route to host.*$"],
-		
+		['postfix_deferred_reject_hostname',		"^.* postfix.*: .* status=deferred .*Client host rejected: cannot find your hostname.*$"],
 
 	]
 
