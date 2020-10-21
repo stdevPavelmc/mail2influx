@@ -21,8 +21,8 @@ logfile="/var/log/mail.log"
 ### End onf the user configrations
 
 # triggers
-DEBUG=True
-DEVELOP=True
+DEBUG=False
+DEVELOP=False
 
 ### Just for dev purpose
 dev_host="10.0.3.9"
@@ -207,8 +207,6 @@ def filter_postfix(line):
 			"^.* postfix.*: .* status=deferred .* Network is unreachable.*$"],
 		['postfix_deferred_relay_denied',
 			"^.* postfix.*: .* status=deferred .*Relay access denied.*$"],
-		
-
 	]
 
 	#### pure data messages
@@ -284,6 +282,15 @@ def postfix_filtering(line, mea, regex):
 		cph = re.findall("[\w\.]+ with cipher .*$", line)
 		if len(cph):
 			tags['cipher'] = cph[0].replace("with cipher", '/')
+
+		# get the IP of the bocked by DNSBL and the DNSBL name
+		if mea == "postfix_nq_DNSBL":
+			# remote ip
+			tags['rip'] = get_ip(line)
+
+			# name od the dnsbl
+			dnsbl = re.findall("blocked using .*;", line)
+			tags['dnsbl'] = dnsbl[0].split(" ")[2].split(';')[0]
 
 		extracted = extract_vp_data(data)
 		if  len(extracted):
