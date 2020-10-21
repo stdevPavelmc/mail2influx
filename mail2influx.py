@@ -167,6 +167,8 @@ def filter_postfix(line):
 		['postfix_deferred_no_route_to_host',		"^.* postfix.*: .* status=deferred .*No route to host.*$"],
 		['postfix_deferred_reject_hostname',		"^.* postfix.*: .* status=deferred .*Client host rejected: cannot find your hostname.*$"],
 		['postfix_deferred_temporary_error',		"^.* postfix.*: .* status=deferred .* Temporary .*$"],
+		['postfix_deferred_server_unreacheable',		"^.* postfix.*: .* status=deferred .* Network is unreachable.*$"],
+		
 
 	]
 
