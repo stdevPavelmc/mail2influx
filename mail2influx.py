@@ -159,10 +159,9 @@ def filter_postfix(line):
 		['postfix_deferred_connection_refused',		"^.* postfix.*: .* status=deferred .*Connection refused.*$"],
 		['postfix_deferred_greylisting',			"^.* postfix.*: .* status=deferred .*Greylisting enabled.*$"],
 		['postfix_deferred_too_many_recipients',	"^.* postfix.*: .* status=deferred .*Too many recipients received from the sender.*$"],
-		['postfix_deferred_server_error',			"^.* postfix.*: .* status=deferred .*Client host rejected.* Server configuration error.*$"],
+		['postfix_deferred_server_error',	"^.* postfix.*: .* status=deferred .*Client host rejected.* Server configuration error.*$"],
+		['postfix_deferred_TLS_error',		"^.* postfix.*: .* status=deferred .*Cannot start TLS.*$"],
 		
-
-
 	]
 
 	#### pure data messages
