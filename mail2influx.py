@@ -151,8 +151,10 @@ def filter_postfix(line):
 		['postfix_tls_error',					"^.* postfix.*: .* TLS library problem: .*$"],
 		['postfix_ssl_error',					"^.* postfix.*: .* SSL_accept error from.*$"],
 		['postfix_deferred_noroute', 			"^.* postfix.*: .* status=deferred .* No route to host)$"],
-		['postfix_deferred_service_not_available',			"^ .* postfix.*: .* status = deferred .* Recipient address rejected: Service is unavailable.*)$"],
-		['postfix_deferred_unverified_recipient',			"^.* postfix.*: .* status = deferred .* Recipient address rejected: unverified address: .*)$"],
+		['postfix_deferred_service_not_available',			"^ .* postfix.*: .* status=deferred .* Recipient address rejected: Service is unavailable.*)$"],
+		['postfix_deferred_unverified_recipient',			"^.* postfix.*: .* status=deferred .* Recipient address rejected: unverified address: .*)$"],
+		['postfix_deferred_over_quota',						"^.* postfix.*: .* status=deferred .* would exceed mailbox quota .*)$"],
+
 	]
 
 	#### pure data messages
