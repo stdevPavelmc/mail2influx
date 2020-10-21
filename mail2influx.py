@@ -158,6 +158,8 @@ def filter_postfix(line):
 		['postfix_deferred_timeout',				"^.* postfix.*: .* status=deferred .*Connection timed out.*$"],
 		['postfix_deferred_connection_refused',		"^.* postfix.*: .* status=deferred .*Connection refused.*$"],
 		['postfix_deferred_greylisting',			"^.* postfix.*: .* status=deferred .*Greylisting enabled.*$"],
+		['postfix_deferred_too_many_recipients',	"^.* postfix.*: .* status=deferred .*Too many recipients received from the sender.*$"],
+		
 
 
 	]
