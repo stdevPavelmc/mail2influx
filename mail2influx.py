@@ -296,7 +296,7 @@ def postfix_filtering(line, mea, regex):
 
 		if mea == "pmg_virus":
 			# get the virus name
-			tag["virus"] = data.split(" ")[-2]
+			tags["virus"] = data.split(" ")[-2]
 
 		extracted = extract_vp_data(data)
 		if  len(extracted):
