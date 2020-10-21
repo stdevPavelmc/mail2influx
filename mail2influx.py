@@ -207,6 +207,8 @@ def filter_postfix(line):
 			"^.* postfix.*: .* status=deferred .* Network is unreachable.*$"],
 		['postfix_deferred_relay_denied',
 			"^.* postfix.*: .* status=deferred .*Relay access denied.*$"],
+		['postfix_virus',
+			"^.* virus detected\: .*clamav.*$"],
 	]
 
 	#### pure data messages
@@ -273,24 +275,28 @@ def postfix_filtering(line, mea, regex):
 				tags['rip'] = ip
 
 		# get the method
-		m = re.findall("/[a-z]+/", line)
+		m = re.findall("/[a-z]+/", data)
 		if len(m):
 			method = m[0].translate({ord(i): None for i in '/'})
 			tags['method'] = method
 
 		# get the cypher from the data
-		cph = re.findall("[\w\.]+ with cipher .*$", line)
+		cph = re.findall("[\w\.]+ with cipher .*$", data)
 		if len(cph):
 			tags['cipher'] = cph[0].replace("with cipher", '/')
 
 		# get the IP of the bocked by DNSBL and the DNSBL name
 		if mea == "postfix_nq_DNSBL":
 			# remote ip
-			tags['rip'] = get_ip(line)
+			tags['rip'] = get_ip(data)
 
 			# name od the dnsbl
-			dnsbl = re.findall("blocked using .*;", line)
+			dnsbl = re.findall("blocked using .*;", data)
 			tags['dnsbl'] = dnsbl[0].split(" ")[2].split(';')[0]
+
+		if mea == "postfix_virus":
+			# get the virus name
+			tag["virus"] = data.split(" ")[-2]
 
 		extracted = extract_vp_data(data)
 		if  len(extracted):
@@ -417,8 +423,7 @@ def mea_add(measurement, value = 1):
 	except: 
 		pass
 	# adding the default value if needed
-	if len(fields) == 0:
-		fields['value'] = value
+	fields['value'] = 1
 	
 	nmea['measurement'] = mea
 	nmea['fields'] = fields
