@@ -18,7 +18,7 @@ except:
 	sys.exit()
 
 ### user configurable settings:
-influxhost = "influx.mydomain.imposible"
+influxhost = "192.168.0.15"
 influxdb = 'mail'
 logfile="/var/log/mail.log"
 ### End onf the user configrations
@@ -417,8 +417,8 @@ def mea_add(measurement):
 	fields = {}
 
 	# convert tags to fields
-	tag2field = [r'size', 'delay', 'rip', 'lip', 'session', 'user', 'sasl_username', 'from', 'to', 'helo',
-              'conn_use', 'delay', 'delays', 'dsn', 'orig_to', 'relay', 'status', 'nrcpt', 'client']
+	tag2field = ['size', 'delay', 'rip', 'lip', 'session', 'helo', 'conn_use',
+				'delay', 'delays', 'dsn', 'orig_to', 'relay', 'status', 'nrcpt', 'client']
 	for tag in tag2field:
 		try:
 			fields[tag] = tags[tag]
@@ -430,7 +430,7 @@ def mea_add(measurement):
 	# method, via, sasl_method, reason (timeout reason), cipher
 
 	# non usefull tags to be removed
-	removethistags = [r'mpid']
+	removethistags = ['mpid']
 	for tag in removethistags:
 		try:
 			del tags[tag]
