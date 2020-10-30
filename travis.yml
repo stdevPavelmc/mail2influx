@@ -1,0 +1,21 @@
+sudo: false
+
+language: python
+
+python:
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.8"
+
+cache: pip
+
+install:
+  - pip install pytest-pylint
+
+script:
+  - pylint mail2influx.py
+  - pytest mail2influx.py
+  - python3 -m py_compile mail2influx.py
